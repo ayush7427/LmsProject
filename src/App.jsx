@@ -1,6 +1,6 @@
 import './App.css'
 import { Routes } from "react-router-dom"
-import { Footer } from './components'
+import { Layout } from './components'
 
 
 function App() {
@@ -9,9 +9,8 @@ function App() {
   return (
     <>
       {/* <Routes>
-
       </Routes> */}
-    <Footer/>
+      <Layout/>
     </>
   )
 }
