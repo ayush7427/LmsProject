@@ -51,7 +51,7 @@ export default function Header(props) {
 
                 <div className="drawer-side w-0">
                     <label htmlFor="my-drawer" className="drawer-overlay">
-                        <ul className="menu p-4 w-48 sm:w-80 bg-base-100 text-base-content relative">
+                        <ul className="menu p-4 h-[100%] w-48 sm:w-80 bg-base-100 text-base-content relative">
 
                             <li className="w-fit absolute right-2 z-50">
                                 <button onClick={() => hideDrawer()}>
@@ -80,7 +80,7 @@ export default function Header(props) {
                             </li>
 
                             {!isLoggedIn && (
-                                <li className=" w-[90%]">
+                                <li className="absolute bottom-4 w-[90%]">
                                     <div className="w-full flex items-center justify-center">
                                         <button className="bg-blue-600 text-white btn-primary px-4 py-1 font-semibold rounded-md w-full">
                                             <Link to="/login">Login</Link>
@@ -95,7 +95,7 @@ export default function Header(props) {
                             )}
 
                             {isLoggedIn && (
-                                <li className=" w-[90%]">
+                                <li className="absolute bottom-4 w-[90%]">
                                     <div className="w-full flex items-center justify-center">
                                         <button className="bg-green-700 text-white btn-primary px-4 py-1 font-semibold rounded-md w-full">
                                             <Link to="/user/profile">Profile</Link>
