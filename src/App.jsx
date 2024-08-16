@@ -1,6 +1,8 @@
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import { Routes } from "react-router-dom"
-import { Layout } from './components'
+import {HomePage} from './pages/index'
+
+
 
 
 function App() {
@@ -8,9 +10,10 @@ function App() {
 
   return (
     <>
-      {/* <Routes>
-      </Routes> */}
-      <Layout/>
+      <Routes>
+        <Route path='/' element={<HomePage/>} ></Route>
+      </Routes>
+
     </>
   )
 }
