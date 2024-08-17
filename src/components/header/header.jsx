@@ -2,7 +2,8 @@ import React from "react";
 import { FiMenu } from "react-icons/fi";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../Redux/AuthSlice";
 
 export default function Header(props) {
     const changeWidth = () => {
@@ -18,21 +19,21 @@ export default function Header(props) {
         drawerSide[0].style.width = 0;
     };
 
-    const dispatch = useDispatch()
-    const navigate = useNavigate()
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
-    const isLoggedIn = useSelector((state) => state?.auth?.isLoggedIn)
-    const role = useSelector((state) => state?.auth?.role)
-
+    const isLoggedIn = useSelector((state) => state?.auth?.isLoggedIn);
+    const role = useSelector((state) => state?.auth?.role);
 
     const handleLogout = async (e) => {
-        e.preventDefault()
+        e.preventDefault();
 
-        // const result = await dispatch(logout())
+        const result = await dispatch(logout())
+        if (result?.payload?.success) {
 
-
-        navigate("/")
-    }
+            navigate("/");
+        }
+    };
 
     return (
         <div className="min-h-[10vh]">
@@ -52,7 +53,6 @@ export default function Header(props) {
                 <div className="drawer-side w-0">
                     <label htmlFor="my-drawer" className="drawer-overlay">
                         <ul className="menu p-4 h-[100%] w-48 sm:w-80 bg-base-100 text-base-content relative">
-
                             <li className="w-fit absolute right-2 z-50">
                                 <button onClick={() => hideDrawer()}>
                                     <AiFillCloseCircle size={"24px"} />
@@ -91,7 +91,6 @@ export default function Header(props) {
                                         </button>
                                     </div>
                                 </li>
-
                             )}
 
                             {isLoggedIn && (
@@ -106,7 +105,6 @@ export default function Header(props) {
                                         </button>
                                     </div>
                                 </li>
-
                             )}
                         </ul>
                     </label>
