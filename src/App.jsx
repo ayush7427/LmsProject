@@ -1,8 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import { HomePage, AboutPage, NotFoundPage } from './pages/index'
-
-
+import { HomePage, AboutPage, NotFoundPage ,SignupPage} from './pages/index'
 
 
 function App() {
@@ -12,8 +10,9 @@ function App() {
     <>
       <Routes>
         <Route path='/' element={<HomePage />} ></Route>
-        <Route path='/about' element={<AboutPage />} ></Route>
-        <Route path='*' element={<NotFoundPage />} ></Route>
+        <Route path='/about' element={<AboutPage />} />
+        <Route path='*' element={<NotFoundPage />} />
+        <Route path='/signup' element={<SignupPage />}/>
       </Routes>
 
     </>
