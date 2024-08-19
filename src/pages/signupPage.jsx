@@ -91,7 +91,7 @@ export default function SignupPage(props) {
         const response = await dispatch(createAccount(formdata))
 
         if (response?.payload?.success) {
-            
+
             navigate("/")
         }
 
@@ -168,7 +168,7 @@ export default function SignupPage(props) {
                     <button onClick={createNewAccount} className='bg-yellow-500 hover:bg-yellow-600 transition-all ease-in-out duration-300 rounded-sm py-2 font-semibold text-xl cursor-pointer mt-2' type='submit'>Create account</button>
 
                     <p className='text-center'>
-                        Already have an account ? <Link to={"/login"} className='link text-accent cursor-pointer'>Login</Link>
+                        Already have an account? <Link to={"/login"} className='link text-accent cursor-pointer'>Login</Link>
                     </p>
                 </form>
             </div>
