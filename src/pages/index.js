@@ -5,6 +5,7 @@ import SignupPage from "./signupPage";
 import LoginPage from "./LoginPage";
 import CoursesList from "./course/coursesList";
 import ContactPage from "./contactPage";
+import Denied from "./denied";
 
 export {
     HomePage,
@@ -13,5 +14,6 @@ export {
     SignupPage,
     LoginPage,
     CoursesList,
-    ContactPage
+    ContactPage,
+    Denied
 }
