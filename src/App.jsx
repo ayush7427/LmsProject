@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import { HomePage, AboutPage, NotFoundPage, SignupPage, LoginPage, CoursesList, ContactPage, Denied, CourseDescription } from './pages/index'
+import { HomePage, AboutPage, NotFoundPage, SignupPage, LoginPage, CoursesList, ContactPage, Denied, CourseDescription, CreateCourse } from './pages/index'
+import RequireAuth from './components/auth/requireAuth'
 
 
 function App() {
@@ -18,6 +19,10 @@ function App() {
         <Route path='/courses' element={<CoursesList />} />
         <Route path='/denied' element={<Denied />} />
         <Route path='/course/description' element={<CourseDescription />} />
+
+        <Route path='' element={<RequireAuth allowedRoles={["ADMIN"]} />} >
+          <Route path='/course/create' element={<CreateCourse />} />
+        </Route>
       </Routes >
 
     </>

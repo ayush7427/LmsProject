@@ -19,7 +19,7 @@ export default function SignupPage(props) {
         password: "",
         avatar: ""
     })
-    console.log(signupData);
+    // console.log(signupData);
 
 
     const handleuserInput = (e) => {
@@ -49,7 +49,7 @@ export default function SignupPage(props) {
             const fileReader = new FileReader()
             fileReader.readAsDataURL(uploadedImage)
             fileReader.addEventListener("load", function () {
-                console.log(this.result);
+                // console.log(this.result);
                 setPreviewImage(this.result)
             })
         }
