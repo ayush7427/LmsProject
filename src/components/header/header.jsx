@@ -65,7 +65,7 @@ export default function Header(props) {
 
                             {isLoggedIn && role === "ADMIN" && (
                                 <li>
-                                    <Link to={"/admin/dashboard"}>Admin Dashboard</Link>
+                                    <Link to={"/course/create"}>Create New Course</Link>
                                 </li>
                             )}
 
