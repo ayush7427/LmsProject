@@ -8,6 +8,7 @@ import ContactPage from "./contactPage";
 import Denied from "./denied";
 import CourseDescription from "./course/courseDescription";
 import CreateCourse from "./course/createCourse";
+import ProfilePage from "./profilePage";
 
 export {
     HomePage,
@@ -19,5 +20,6 @@ export {
     ContactPage,
     Denied,
     CourseDescription,
-    CreateCourse
+    CreateCourse,
+    ProfilePage
 }

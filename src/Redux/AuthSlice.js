@@ -5,7 +5,7 @@ import axiosInstance from "../Helpers/axiosInstance";
 const initialState = {
   isLoggedIn: localStorage.getItem("isLoggedIn") || false,
   role: localStorage.getItem("role") || "",
-  data: localStorage.getItem("data") || {},
+  data: JSON.parse(localStorage.getItem("data")) || {},
 };
 
 //  signin
@@ -43,7 +43,7 @@ export const login = createAsyncThunk("/auth/login", async (data) => {
 });
 
 //  logout
-export const logout = createAsyncThunk("/auth/logout" , async (data) => {
+export const logout = createAsyncThunk("/auth/logout", async (data) => {
   try {
     const res = axiosInstance.post("user/logout");
     toast.promise(res, {
@@ -65,24 +65,24 @@ const authSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-    .addCase(login.fulfilled  , (state , action) => {
-        localStorage.setItem("data" , JSON.stringify(action?.payload?.user))
-        localStorage.setItem("isLoggedIn" , true)
-        localStorage.setItem("role" , action?.payload?.user?.role)
+      .addCase(login.fulfilled, (state, action) => {
+        localStorage.setItem("data", JSON.stringify(action?.payload?.user))
+        localStorage.setItem("isLoggedIn", true)
+        localStorage.setItem("role", action?.payload?.user?.role)
         // update state
         state.isLoggedIn = true
         state.data = action?.payload?.user
         state.role = action?.payload?.user?.role
-    })
-    .addCase(logout.fulfilled , (state , action) => {
-      localStorage.clear()
-      state.data = {}
-      state.isLoggedIn = false
-      state.role = ""
-    })
+      })
+      .addCase(logout.fulfilled, (state, action) => {
+        localStorage.clear()
+        state.data = {}
+        state.isLoggedIn = false
+        state.role = ""
+      })
   }
 });
 
-export const {} = authSlice.actions;
+export const { } = authSlice.actions;
 
 export default authSlice.reducer;
