@@ -10,7 +10,8 @@ import CourseDescription from "./course/courseDescription";
 import CreateCourse from "./course/createCourse";
 import ProfilePage from "./profilePage";
 import EditProfilePage from "./editProfilePage";
-
+import Checkout from "./payment/checkout";
+import CheckoutSuccess from "./payment/checkoutsuccess";
 
 export {
     HomePage,
@@ -24,5 +25,7 @@ export {
     CourseDescription,
     CreateCourse,
     ProfilePage,
-    EditProfilePage
+    EditProfilePage,
+    Checkout,
+    CheckoutSuccess
 }
