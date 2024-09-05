@@ -1,13 +1,23 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Layout } from '../components'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { cancelCourseBundle } from '../Redux/razorPaySlice'
+import { getUserData } from '../Redux/AuthSlice'
+import { toast } from 'react-toastify'
 
 export default function ProfilePage(props) {
 
     const userData = useSelector((state) => state?.auth?.data)
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
+    const handleCancellation = async () => {
+        await dispatch(cancelCourseBundle())
+        await dispatch(getUserData())
+        toast.success("Cancellation completed")
+        navigate("/")
+    }
 
     return (
         <Layout>
@@ -38,7 +48,7 @@ export default function ProfilePage(props) {
                         </Link>
                     </div>
                     {userData?.subscription?.status === "active" && (
-                        <button className='w-full bg-rose-600 hover:bg-rose-500 transition-all ease-in-out duration-300 rounded-sm font-semibold py-2 cursor-pointer text-center' >Cancel Subscription</button>
+                        <button onClick={handleCancellation} className='w-full bg-rose-600 hover:bg-rose-500 transition-all ease-in-out duration-300 rounded-sm font-semibold py-2 cursor-pointer text-center' >Cancel Subscription</button>
                     )}
                 </div>
             </div>
