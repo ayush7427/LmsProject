@@ -12,6 +12,7 @@ import ProfilePage from "./profilePage";
 import EditProfilePage from "./editProfilePage";
 import Checkout from "./payment/checkout";
 import CheckoutSuccess from "./payment/checkoutsuccess";
+import CheckoutFail from "./payment/checkoutFail";
 
 export {
     HomePage,
@@ -27,5 +28,6 @@ export {
     ProfilePage,
     EditProfilePage,
     Checkout,
-    CheckoutSuccess
+    CheckoutSuccess,
+    CheckoutFail
 }
