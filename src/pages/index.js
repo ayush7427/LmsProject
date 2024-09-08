@@ -13,6 +13,8 @@ import EditProfilePage from "./editProfilePage";
 import Checkout from "./payment/checkout";
 import CheckoutSuccess from "./payment/checkoutsuccess";
 import CheckoutFail from "./payment/checkoutFail";
+import DisplayLectures from "./dashboard/displayLectures";
+
 
 export {
     HomePage,
@@ -29,5 +31,6 @@ export {
     EditProfilePage,
     Checkout,
     CheckoutSuccess,
-    CheckoutFail
+    CheckoutFail,
+    DisplayLectures
 }

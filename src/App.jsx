@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import { HomePage, AboutPage, NotFoundPage, SignupPage, LoginPage, CoursesList, ContactPage, Denied, CourseDescription, CreateCourse, ProfilePage, EditProfilePage, Checkout, CheckoutSuccess, CheckoutFail } from './pages/index'
+import { HomePage, AboutPage, NotFoundPage, SignupPage, LoginPage, CoursesList, ContactPage, Denied, CourseDescription, CreateCourse, ProfilePage, EditProfilePage, Checkout, CheckoutSuccess, CheckoutFail, DisplayLectures } from './pages/index'
 import RequireAuth from './components/auth/requireAuth'
 
 
@@ -30,6 +30,7 @@ function App() {
           <Route path='/checkout' element={<Checkout />} />
           <Route path='/checkout/success' element={<CheckoutSuccess />} />
           <Route path='/checkout/fail' element={<CheckoutFail />} />
+          <Route path='/course/displaylectures' element={<DisplayLectures />} />
         </Route>
 
       </Routes >
