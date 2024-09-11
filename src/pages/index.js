@@ -14,7 +14,7 @@ import Checkout from "./payment/checkout";
 import CheckoutSuccess from "./payment/checkoutsuccess";
 import CheckoutFail from "./payment/checkoutFail";
 import DisplayLectures from "./dashboard/displayLectures";
-
+import AddLecture from "./dashboard/addLecture";
 
 export {
     HomePage,
@@ -32,5 +32,6 @@ export {
     Checkout,
     CheckoutSuccess,
     CheckoutFail,
-    DisplayLectures
+    DisplayLectures,
+    AddLecture
 }
