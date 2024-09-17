@@ -3,6 +3,7 @@ import authSlice from "./AuthSlice"
 import courseSlice from "./courseSlice"
 import razorPaySlice from "./razorPaySlice"
 import lectureSlice from "./lectureSlice"
+import statSlice from "./statSlice"
 
 
 const store = configureStore({
@@ -10,7 +11,8 @@ const store = configureStore({
         auth: authSlice,
         course: courseSlice,
         razorpay: razorPaySlice,
-        lecture: lectureSlice
+        lecture: lectureSlice,
+        stats: statSlice
     },
     devTools: true
 })

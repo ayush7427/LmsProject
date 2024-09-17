@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import { HomePage, AboutPage, NotFoundPage, SignupPage, LoginPage, CoursesList, ContactPage, Denied, CourseDescription, CreateCourse, ProfilePage, EditProfilePage, Checkout, CheckoutSuccess, CheckoutFail, DisplayLectures, AddLecture } from './pages/index'
+import { HomePage, AboutPage, NotFoundPage, SignupPage, LoginPage, CoursesList, ContactPage, Denied, CourseDescription, CreateCourse, ProfilePage, EditProfilePage, Checkout, CheckoutSuccess, CheckoutFail, DisplayLectures, AddLecture, AdminDashboard } from './pages/index'
 import RequireAuth from './components/auth/requireAuth'
 
 
@@ -23,6 +23,7 @@ function App() {
         <Route element={<RequireAuth allowedRoles={["ADMIN"]} />} >
           <Route path='/course/create' element={<CreateCourse />} />
           <Route path='/course/addlecture' element={<AddLecture />} />
+          <Route path='/admin/dashboard' element={<AdminDashboard />} />
         </Route>
 
         <Route element={<RequireAuth allowedRoles={["ADMIN", "USER"]} />} >
